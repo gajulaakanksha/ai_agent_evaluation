@@ -1,6 +1,50 @@
-# Prompt Engineer Assignment
+# AI Agent Evaluation & Prompt Optimization
 
-AI voice agent evaluator, prompt fixer, and iteration pipeline for debt collection calls.
+## Project Summary
+
+This project analyzes the behavior of an AI voice agent used for education loan debt collection calls. The agent communicates with borrowers across multiple conversational phases and attempts to help them resolve outstanding loan payments.
+
+While reviewing real call transcripts, we observed that the agent performs well in some cases but fails badly in others. The objective of this project is to systematically identify those failures, determine their root causes, and improve the agent's behavior.
+
+The project is divided into three stages:
+
+Detective — Build a conversation evaluator that scores agent performance.
+
+Surgeon — Identify flaws in the system prompt and fix them.
+
+Architect — Build a reusable pipeline to evaluate prompts at scale.
+
+The result is a prompt evaluation framework that allows fast iteration and reliable testing of conversational AI behavior.
+
+
+## Problem Statement
+
+Problem Context
+
+AI debt collection agents must carefully balance several goals:
+
+clearly explain loan obligations
+
+understand borrower circumstances
+
+negotiate repayment options
+
+remain professional and empathetic
+
+avoid harassment or repetitive messaging
+
+Poor prompt design can cause issues such as:
+
+ignoring borrower concerns
+
+repeating payment demands
+
+skipping discovery questions
+
+pressuring borrowers during distress
+
+Manual monitoring of calls does not scale, so an automated evaluation system is needed.
+
 
 ## Setup
 
@@ -26,7 +70,64 @@ The scripts auto-detect whichever key is set. Priority: Groq → Gemini → Anth
 
 ---
 
+## System Architecture
+
+The system is designed as a modular evaluation pipeline that separates conversation scoring, prompt analysis, and prompt experimentation.
+
+This modular design allows new prompts to be tested without modifying the evaluation logic.
+
+### Architecture Overview
+                +----------------------+
+                |   System Prompt      |
+                |  (Original / Fixed)  |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                | Conversation Simulator|
+                |  (LLM generates      |
+                |   agent responses)   |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |  Conversation Logs   |
+                | (agent + borrower)   |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |      Evaluator       |
+                |  - Rule-based score  |
+                |  - Optional LLM judge|
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |   Score Aggregator   |
+                |   Accuracy Analysis  |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |     Final Report     |
+                | Pipeline Metrics     |
+                +----------------------+
+
+
 ## Part 1 — The Detective
+
+### Goal
+
+Create an evaluator that determines how well the AI agent handled each call.
+
+For every transcript the evaluator produces:
+
+a score (0–100)
+
+problematic agent responses
+
+a verdict: good / bad
 
 Scores all 10 calls and checks accuracy against verdicts.json:
 
@@ -72,6 +173,10 @@ Output saved to `results/detective_scores.json`.
 
 ## Part 2 — The Surgeon
 
+### Goal
+
+Identify flaws in the original system prompt that caused failures.
+
 ### Flaws found
 
 See `surgeon/flaw_analysis.md` for full analysis. Summary:
@@ -94,7 +199,12 @@ Output saved to `results/surgeon_comparisons.md`.
 
 ---
 
-## Part 3 — The Pipeline
+## Part 3 — The Architect
+### Goal
+
+Build a reusable pipeline to evaluate prompts automatically.
+
+This allows rapid prompt iteration and objective comparison.
 
 Score a prompt against all transcripts:
 
@@ -125,6 +235,40 @@ Output saved to `results/pipeline_report.md` and `results/pipeline_scores.json`.
 
 ---
 
+## Pipeline Workflow
+```
+Prompt + Transcripts
+        ↓
+Conversation Simulation
+        ↓
+Generated Agent Responses
+        ↓
+Evaluator
+        ↓
+Score Aggregation
+        ↓
+Performance Report
+```
+Outputs:
+```
+results/pipeline_report.md
+results/pipeline_scores.json
+```
+
+## Key Insights
+
+Analysis of the transcripts revealed several systemic issues:
+
+Agents often fail when borrowers express emotional distress
+
+Language switching requires explicit persistence rules
+
+Lack of escalation logic leads to repetitive loops
+
+Negotiation strategies must adapt to borrower responses
+
+Prompt improvements addressing these issues lead to more natural and effective conversations.
+
 ## Repo Structure
 
 ```
@@ -153,3 +297,17 @@ Output saved to `results/pipeline_report.md` and `results/pipeline_scores.json`.
 - Build a regression test suite so prompt changes can't silently break passing calls
 - Add a confidence score to each verdict (some calls are borderline)
 - Track cost per evaluation run to stay within budget automatically
+
+## Conclusion
+
+This project demonstrates a complete workflow for improving conversational AI systems:
+
+detect failures automatically
+
+diagnose root causes
+
+improve prompt behavior
+
+build infrastructure for continuous evaluation
+
+The resulting pipeline enables safe and scalable prompt iteration for AI agents in production environments.
