@@ -1,0 +1,714 @@
+[
+  {
+    "call_id": "call_01",
+    "score": 93,
+    "verdict": "good",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 15,
+        "note": "All 4 phases visited"
+      },
+      "identity_and_amounts": {
+        "score": 15,
+        "note": "Both TOS and closure amount disclosed"
+      },
+      "discovery_quality": {
+        "score": 8,
+        "note": "1 discovery questions, some depth"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "No language switch needed"
+      },
+      "repetition": {
+        "score": 15,
+        "note": "No significant repetition"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "No sensitive signals detected, tone acceptable"
+      },
+      "resolution": {
+        "score": 15,
+        "note": "Payment commitment + callback scheduled"
+      }
+    },
+    "base_score": 93,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "Your total outstanding is fifty thousand rupees. But we can remove all charges and close your loan at just thirty five thousand rupees.",
+        "reason": "Agent quotes the total outstanding (TOS) as the amount to pay instead of the closure amount (POS), which is a major mistake.",
+        "severity": "major",
+        "category": "WRONG_AMOUNT"
+      },
+      {
+        "agent_text_snippet": "The total outstanding amount is fifty thousand rupees, but we can offer you a closure amount of thirty five thousand rupees.",
+        "reason": "Agent repeats the same information about total outstanding and closure amount, which is unnecessary and confusing.",
+        "severity": "minor",
+        "category": "REPETITION"
+      },
+      {
+        "agent_text_snippet": "I hear you.",
+        "reason": "Agent responds with a simple acknowledgement instead of addressing the customer's concern about the echo.",
+        "severity": "minor",
+        "category": "SKIPS_DISCOVERY"
+      },
+      {
+        "agent_text_snippet": "Yes, Priya Sharma. I'm here. I was just checking your account.",
+        "reason": "Agent discloses the customer's name and account details without confirming they are speaking with the right person.",
+        "severity": "minor",
+        "category": "IDENTITY_LEAK"
+      },
+      {
+        "agent_text_snippet": "Got it. So, you'd like us to call you back towards the end of the month when you'll have the funds ready.",
+        "reason": "Agent assumes the customer wants a callback without explicitly confirming their preference.",
+        "severity": "minor",
+        "category": "SKIPS_DISCOVERY"
+      }
+    ],
+    "llm_assessment": "The call had several issues, including the agent quoting the wrong amount, repeating unnecessary information, and skipping discovery of the customer's concerns. Additionally, the agent disclosed sensitive customer information and assumed the customer's preference without confirmation."
+  },
+  {
+    "call_id": "call_02",
+    "score": 53,
+    "verdict": "bad",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 5,
+        "note": "BLANK_CALL disposition but full conversation exists — mismatch"
+      },
+      "identity_and_amounts": {
+        "score": 8,
+        "note": "Only one amount type disclosed"
+      },
+      "discovery_quality": {
+        "score": 0,
+        "note": "BLANK_CALL disposition mismatch — discovery quality unknown"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "Language switched promptly (delay=-32 turns)"
+      },
+      "repetition": {
+        "score": 15,
+        "note": "No significant repetition"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "Good empathy (20 acknowledgments)"
+      },
+      "resolution": {
+        "score": 0,
+        "note": "PENALTY: Disposition mismatch (BLANK_CALL with full conversation); Callback scheduled with date and reason"
+      }
+    },
+    "base_score": 53,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "I am so sorry to hear about your husband's passing, Rahul. That must be incredibly difficult.",
+        "reason": "The agent applies payment pressure during a sensitive disclosure (bereavement) and also fails to acknowledge the customer's request to communicate in Hindi.",
+        "severity": "critical",
+        "category": "PRESSURE_INAPPROPRIATE, WRONG_LANGUAGE"
+      },
+      {
+        "agent_text_snippet": "I want to clarify that even though there's a dispute, at six hundred and sixty-eight days past due, every month adds another negative entry to the credit report.",
+        "reason": "The agent applies payment pressure and also fails to acknowledge the customer's request to communicate in Hindi.",
+        "severity": "critical",
+        "category": "PRESSURE_INAPPROPRIATE, WRONG_LANGUAGE"
+      },
+      {
+        "agent_text_snippet": "मुझे माफ़ करना, मैं आपकी बात समझ गया हूँ। अब से मैं आपसे हिंदी में ही बात करूँगा।",
+        "reason": "The agent apologizes and agrees to communicate in Hindi, but then continues to speak in English.",
+        "severity": "major",
+        "category": "WRONG_LANGUAGE"
+      },
+      {
+        "agent_text_snippet": "Resolving the payment does not mean giving up the dispute. You can still pursue it separately.",
+        "reason": "The agent applies payment pressure and fails to acknowledge the customer's request to communicate in Hindi.",
+        "severity": "major",
+        "category": "PRESSURE_INAPPROPRIATE, WRONG_LANGUAGE"
+      },
+      {
+        "agent_text_snippet": "It shows an outstanding amount of thirty-five thousand five hundred and eighty-eight rupees.",
+        "reason": "The agent quotes the total outstanding (TOS) amount instead of the closure amount (POS).",
+        "severity": "minor",
+        "category": "WRONG_AMOUNT"
+      }
+    ],
+    "llm_assessment": "The agent fails to communicate effectively in Hindi, applies payment pressure during a sensitive disclosure, and quotes the wrong amount, leading to a poor customer experience."
+  },
+  {
+    "call_id": "call_03",
+    "score": 40,
+    "verdict": "bad",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 5,
+        "note": "Only 2 phases: ['opening', 'discovery', 'dispute']"
+      },
+      "identity_and_amounts": {
+        "score": 0,
+        "note": "No amounts disclosed"
+      },
+      "discovery_quality": {
+        "score": 0,
+        "note": "No meaningful discovery"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "Language switched promptly (delay=-40 turns)"
+      },
+      "repetition": {
+        "score": 10,
+        "note": "Minor repetition (1 instances)"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "No sensitive signals detected, tone acceptable"
+      },
+      "resolution": {
+        "score": 0,
+        "note": "No resolution or proper ending"
+      }
+    },
+    "base_score": 40,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "மன்னிக்கவும், நீங்கள் குறிப்பிட்ட தேதி சரியாக கேட்கவில்லை.",
+        "reason": "AGENT asks the customer to confirm a date that was already mentioned, showing a lack of understanding of the conversation.",
+        "severity": "major",
+        "category": "SKIPS_DISCOVERY"
+      },
+      {
+        "agent_text_snippet": "ஒரு நிமிடம். யூடிஆர் எண் சிஎம்ஐயூடியா என்றால் என்ன?",
+        "reason": "AGENT asks the customer to clarify a simple question that was already answered, showing a lack of attention to the conversation.",
+        "severity": "minor",
+        "category": "LOOPS"
+      },
+      {
+        "agent_text_snippet": "Theek hai, main aapke saath Hindi mein baat karta hoon.",
+        "reason": "AGENT switches to Hindi after the customer has already asked to continue in Tamil.",
+        "severity": "major",
+        "category": "WRONG_LANGUAGE"
+      },
+      {
+        "agent_text_snippet": "நீங்கள் யூடிஆர் எண் கொடுத்தால், நான் சரிபார்க்கிறேன்.",
+        "reason": "AGENT asks the customer to provide a UTR number, but then fails to verify it, showing a lack of attention to detail.",
+        "severity": "minor",
+        "category": "SKIPS_DISCOVERY"
+      },
+      {
+        "agent_text_snippet": "ஒரு நிமிடம். யூடிஆர் எண் சிஎம்ஐயூடியா என்றால் என்ன?",
+        "reason": "AGENT asks the customer to clarify a simple question that was already answered, showing a lack of attention to the conversation.",
+        "severity": "minor",
+        "category": "LOOPS"
+      }
+    ],
+    "llm_assessment": "The call was marred by several issues, including the agent's failure to understand the customer's language and their lack of attention to detail. The agent also repeated questions and failed to verify the customer's UTR number, leading to a frustrating conversation."
+  },
+  {
+    "call_id": "call_04",
+    "score": 85,
+    "verdict": "good",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 10,
+        "note": "3 phases visited: ['opening', 'discovery', 'negotiation']"
+      },
+      "identity_and_amounts": {
+        "score": 15,
+        "note": "Both TOS and closure amount disclosed"
+      },
+      "discovery_quality": {
+        "score": 15,
+        "note": "3 meaningful discovery questions"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "No language switch needed"
+      },
+      "repetition": {
+        "score": 5,
+        "note": "Moderate repetition (5 instances)"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "Good empathy (7 acknowledgments)"
+      },
+      "resolution": {
+        "score": 15,
+        "note": "Payment commitment + callback scheduled"
+      }
+    },
+    "base_score": 85,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "Okay, give me just a moment...",
+        "reason": "Agent repeats the same message without adding any new information, wasting time and potentially frustrating the customer.",
+        "severity": "minor",
+        "category": "LOOPS"
+      },
+      {
+        "agent_text_snippet": "I understand. So, the reason for the delay in payments is that you're currently unemployed. Is that right?",
+        "reason": "Agent applies pressure by asking for confirmation of the customer's employment status, which may be a sensitive topic.",
+        "severity": "minor",
+        "category": "PRESSURE_INAPPROPRIATE"
+      },
+      {
+        "agent_text_snippet": "Okay, so you anticipate it will take about two to three months to find new employment. Is that what you're saying?",
+        "reason": "Agent asks the same question multiple times without progress, potentially annoying the customer.",
+        "severity": "minor",
+        "category": "LOOPS"
+      },
+      {
+        "agent_text_snippet": "You're saying you're not open to discussing options right now? Could you tell me a little more about that?",
+        "reason": "Agent applies pressure by asking for more information about the customer's decision, which may be a sensitive topic.",
+        "severity": "minor",
+        "category": "PRESSURE_INAPPROPRIATE"
+      },
+      {
+        "agent_text_snippet": "Okay, great. So, to confirm, you're open to discussing options to manage your loan during this period. Is that right?",
+        "reason": "Agent repeats the same question multiple times without progress, potentially annoying the customer.",
+        "severity": "minor",
+        "category": "LOOPS"
+      }
+    ],
+    "llm_assessment": "The agent struggled with effective communication, applying pressure in sensitive situations, and repeating questions without progress, ultimately failing to establish a productive conversation with the customer."
+  },
+  {
+    "call_id": "call_05",
+    "score": 73,
+    "verdict": "good",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 10,
+        "note": "3 phases visited: ['opening', 'discovery', 'dispute', 'negotiation']"
+      },
+      "identity_and_amounts": {
+        "score": 10,
+        "note": "Both TOS and closure amount disclosed; PENALTY: TOS quoted as payment amount"
+      },
+      "discovery_quality": {
+        "score": 8,
+        "note": "1 discovery questions, some depth"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "No language switch needed"
+      },
+      "repetition": {
+        "score": 15,
+        "note": "No significant repetition"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "No sensitive signals detected, tone acceptable"
+      },
+      "resolution": {
+        "score": 15,
+        "note": "Payment commitment + callback scheduled"
+      }
+    },
+    "base_score": 83,
+    "penalty_deductions": 10,
+    "penalty_flags": [
+      "Identity leak: amounts disclosed before identity confirmed (-10)"
+    ],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "I understand it can be tough. I can help you with some options to manage the fifty thousand",
+        "reason": "Agent applies payment pressure without understanding the customer's situation, and also repeats the same information already given.",
+        "severity": "major",
+        "category": "SKIPS_DISCOVERY"
+      },
+      {
+        "agent_text_snippet": "Okay, you'll pay the full forty",
+        "reason": "Agent quotes an incorrect amount to pay, which is not the closure amount (POS) as discussed earlier.",
+        "severity": "major",
+        "category": "WRONG_AMOUNT"
+      },
+      {
+        "agent_text_snippet": "I hear you. You mentioned",
+        "reason": "Agent repeats a previous statement without adding new information, causing unnecessary repetition.",
+        "severity": "minor",
+        "category": "REPETITION"
+      },
+      {
+        "agent_text_snippet": "I see. You're saying the pending amount is actually twenty nine thousand, not fifty thousand?",
+        "reason": "Agent asks a question that could have been answered by listening to the customer's previous statements.",
+        "severity": "minor",
+        "category": "SKIPS_DISCOVERY"
+      },
+      {
+        "agent_text_snippet": "Great. I was just saying that I'm pulling up your account details now so we can look at the exact figures for your DemoLender loan.",
+        "reason": "Agent repeats information that was already discussed, causing unnecessary repetition.",
+        "severity": "minor",
+        "category": "REPETITION"
+      }
+    ],
+    "llm_assessment": "The agent failed to properly understand the customer's situation and repeated information unnecessarily, leading to confusion and potential miscommunication."
+  },
+  {
+    "call_id": "call_06",
+    "score": 78,
+    "verdict": "good",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 10,
+        "note": "3 phases visited: ['opening', 'discovery', 'dispute', 'negotiation']"
+      },
+      "identity_and_amounts": {
+        "score": 8,
+        "note": "Only one amount type disclosed"
+      },
+      "discovery_quality": {
+        "score": 8,
+        "note": "2 discovery questions, some depth"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "No language switch needed"
+      },
+      "repetition": {
+        "score": 15,
+        "note": "No significant repetition"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "No sensitive signals detected, tone acceptable"
+      },
+      "resolution": {
+        "score": 12,
+        "note": "Dispute escalated with contact info"
+      }
+    },
+    "base_score": 78,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "I hear you. I want to mention that even though there's a dispute, an unpaid loan can still negatively affect your credit score. Banks see it as an outstanding amount.",
+        "reason": "Applying payment pressure during a sensitive disclosure (dispute with the institution) and mentioning the loan amount without confirming the borrower's identity.",
+        "severity": "major",
+        "category": "PRESSURE_INAPPROPRIATE|IDENTITY_LEAK"
+      },
+      {
+        "agent_text_snippet": "We might even be able to remove some of the penalty charges from your fifty thousand rupees.",
+        "reason": "Mentioning the loan amount without confirming the borrower's identity.",
+        "severity": "major",
+        "category": "IDENTITY_LEAK"
+      },
+      {
+        "agent_text_snippet": "I understand your point of view. Since this is beyond what I can resolve, I recommend reaching out to DemoLender directly.",
+        "reason": "Failing to provide an escalation path (email/contact) when the borrower has a legitimate dispute.",
+        "severity": "minor",
+        "category": "NO_ESCALATION"
+      },
+      {
+        "agent_text_snippet": "I understand you're not happy with the services from the institution and have disconnected with them. It sounds like you're feeling dissatisfied with how things turned out.",
+        "reason": "Asking a question that has already been answered and not providing any new information.",
+        "severity": "minor",
+        "category": "REPETITION"
+      },
+      {
+        "agent_text_snippet": "I see. You're saying there's an issue with the services",
+        "reason": "Asking a question that has already been answered and not providing any new information.",
+        "severity": "minor",
+        "category": "REPETITION"
+      }
+    ],
+    "llm_assessment": "The agent failed to properly address the borrower's concerns and disputes, and instead applied payment pressure and mentioned the loan amount without confirming the borrower's identity. The agent also failed to provide an escalation path for the borrower's legitimate dispute."
+  },
+  {
+    "call_id": "call_07",
+    "score": 48,
+    "verdict": "bad",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 5,
+        "note": "Only 2 phases: ['opening', 'discovery']"
+      },
+      "identity_and_amounts": {
+        "score": 8,
+        "note": "Only one amount type disclosed"
+      },
+      "discovery_quality": {
+        "score": 0,
+        "note": "No meaningful discovery"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "Language switched promptly (delay=-9 turns)"
+      },
+      "repetition": {
+        "score": 10,
+        "note": "Minor repetition (2 instances)"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "No sensitive signals detected, tone acceptable"
+      },
+      "resolution": {
+        "score": 0,
+        "note": "No resolution or proper ending"
+      }
+    },
+    "base_score": 48,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "I am Alex from DemoCompany, and I'm calling regarding your DemoLender loan. We have fifty-five thousand three hundred and thirty-five rupees pending on the account.",
+        "reason": "Agent repeats the same message multiple times without making progress in the conversation.",
+        "severity": "major",
+        "category": "REPETITION"
+      },
+      {
+        "agent_text_snippet": "I am Alex from DemoCompany, and I'm calling about your DemoLender loan. There's an outstanding amount of fifty-five thousand three hundred and thirty-five rupees.",
+        "reason": "Agent repeats the same message multiple times without making progress in the conversation.",
+        "severity": "major",
+        "category": "REPETITION"
+      },
+      {
+        "agent_text_snippet": "நீங்க கேட்குறது எனக்குப் புரியுது.",
+        "reason": "Agent responds in Tamil but then asks the customer to repeat themselves in a confusing manner.",
+        "severity": "major",
+        "category": "WRONG_LANGUAGE"
+      },
+      {
+        "agent_text_snippet": "மன்னிக்கவும். நீங்க என்ன சொல்றீங்கன்னு எனக்குப் புரியலை.",
+        "reason": "Agent asks the customer to repeat themselves multiple times without making progress in the conversation.",
+        "severity": "major",
+        "category": "REPETITION"
+      },
+      {
+        "agent_text_snippet": "இல்ல, நீங்க கேட்டது எனக்கு புரியல. தயவுசெய்து மறுபடியும் தெளிவா சொல்ல முடியுமா?",
+        "reason": "Agent asks the customer to repeat themselves multiple times without making progress in the conversation.",
+        "severity": "major",
+        "category": "REPETITION"
+      }
+    ],
+    "llm_assessment": "The call is plagued by repetition, with the agent repeating the same message multiple times without making progress in the conversation. The agent also struggles to communicate effectively in Tamil, leading to confusion and frustration for the customer."
+  },
+  {
+    "call_id": "call_08",
+    "score": 73,
+    "verdict": "good",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 15,
+        "note": "Acceptable quick exit for disposition type"
+      },
+      "identity_and_amounts": {
+        "score": 8,
+        "note": "Only one amount type disclosed"
+      },
+      "discovery_quality": {
+        "score": 15,
+        "note": "Discovery not applicable for wrong number"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "No language switch needed"
+      },
+      "repetition": {
+        "score": 5,
+        "note": "Moderate repetition (4 instances)"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "No sensitive signals detected, tone acceptable"
+      },
+      "resolution": {
+        "score": 5,
+        "note": "Call ended but no clear resolution"
+      }
+    },
+    "base_score": 73,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "Hello?",
+        "reason": "Agent repeats the same message multiple times without progress, showing a lack of understanding of the customer's response.",
+        "severity": "major",
+        "category": "LOOPS"
+      },
+      {
+        "agent_text_snippet": "Hello?",
+        "reason": "Agent repeats the same message multiple times without progress, showing a lack of understanding of the customer's response.",
+        "severity": "major",
+        "category": "LOOPS"
+      },
+      {
+        "agent_text_snippet": "Hello?",
+        "reason": "Agent repeats the same message multiple times without progress, showing a lack of understanding of the customer's response.",
+        "severity": "major",
+        "category": "LOOPS"
+      },
+      {
+        "agent_text_snippet": "Hello?",
+        "reason": "Agent repeats the same message multiple times without progress, showing a lack of understanding of the customer's response.",
+        "severity": "major",
+        "category": "LOOPS"
+      },
+      {
+        "agent_text_snippet": "I see. Suresh Rao, I'm calling about your DemoLender education loan. We're showing a pending amount of fifty thousand rupees. Can you tell me a little about why you haven't been able to make the payments?",
+        "reason": "Agent starts the conversation with the wrong customer name and loan type, showing a lack of understanding of the customer's identity.",
+        "severity": "major",
+        "category": "IDENTITY_LEAK"
+      }
+    ],
+    "llm_assessment": "This call failed due to the agent's inability to understand the customer's identity and their repeated attempts to engage with the wrong person, resulting in a frustrating and unproductive conversation."
+  },
+  {
+    "call_id": "call_09",
+    "score": 54,
+    "verdict": "bad",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 5,
+        "note": "Only 2 phases: ['opening', 'callback_opening', 'negotiation']"
+      },
+      "identity_and_amounts": {
+        "score": 15,
+        "note": "Both TOS and closure amount disclosed"
+      },
+      "discovery_quality": {
+        "score": 2,
+        "note": "Inbound callback — discovery phase skipped entirely"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "No language switch needed"
+      },
+      "repetition": {
+        "score": 10,
+        "note": "Minor repetition (2 instances)"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "No sensitive signals detected, tone acceptable"
+      },
+      "resolution": {
+        "score": -3,
+        "note": "PENALTY: Connection dropped, no callback scheduled; Call ended but no clear resolution"
+      }
+    },
+    "base_score": 54,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "So picking up from where we left off...",
+        "reason": "The agent repeats the same phrase from the previous call, showing a lack of understanding of the current conversation.",
+        "severity": "minor",
+        "category": "REPETITION"
+      },
+      {
+        "agent_text_snippet": "I understand we got disconnected last time due to signal issues.",
+        "reason": "The agent incorrectly states the reason for the previous disconnection, which was actually a bad signal.",
+        "severity": "minor",
+        "category": "DISPOSITION_MISMATCH"
+      },
+      {
+        "agent_text_snippet": "The good news is I can help get those removed, which would bring the amount down for you.",
+        "reason": "The agent applies pressure by implying that removing charges is a 'good news', which may not be the case for the customer.",
+        "severity": "minor",
+        "category": "PRESSURE_INAPPROPRIATE"
+      },
+      {
+        "agent_text_snippet": "If we can get that closed, I can see about waiving the penalty charges.",
+        "reason": "The agent implies that waiving penalty charges is contingent on the customer paying the full amount, which may not be the case.",
+        "severity": "minor",
+        "category": "PRESSURE_INAPPROPRIATE"
+      },
+      {
+        "agent_text_snippet": "I understand you're seeing a different outstanding amount, Kavita. Let me check the exact figures on my end to get a clear picture for you.",
+        "reason": "The agent fails to address the customer's correct outstanding amount and instead asks to check the figures on their end, potentially leading to further confusion.",
+        "severity": "major",
+        "category": "SKIPS_DISCOVERY"
+      }
+    ],
+    "llm_assessment": "The agent struggles to understand the customer's situation and provides unclear information, leading to confusion and potential miscommunication."
+  },
+  {
+    "call_id": "call_10",
+    "score": 55,
+    "verdict": "bad",
+    "dimension_scores": {
+      "phase_progression": {
+        "score": 5,
+        "note": "Phase-hopping in very short call (9 turns, 3 phases)"
+      },
+      "identity_and_amounts": {
+        "score": 8,
+        "note": "Only one amount type disclosed"
+      },
+      "discovery_quality": {
+        "score": 0,
+        "note": "No meaningful discovery"
+      },
+      "language_handling": {
+        "score": 10,
+        "note": "No language switch needed"
+      },
+      "repetition": {
+        "score": 15,
+        "note": "No significant repetition"
+      },
+      "empathy": {
+        "score": 15,
+        "note": "No sensitive signals detected, tone acceptable"
+      },
+      "resolution": {
+        "score": 2,
+        "note": "Call too short, no commitment, agent gave up"
+      }
+    },
+    "base_score": 55,
+    "penalty_deductions": 0,
+    "penalty_flags": [],
+    "worst_messages": [
+      {
+        "agent_text_snippet": "You have fifty thousand rupees pending. Is there anything that has been making it difficult to clear this?",
+        "reason": "Agent asks the same question multiple times without progress, and also applies payment pressure during a sensitive disclosure (job loss not explicitly mentioned but the customer is hesitant to discuss their situation).",
+        "severity": "major",
+        "category": "REPEAT|PRESSURE_INAPPROPRIATE"
+      },
+      {
+        "agent_text_snippet": "Would you be comfortable sharing a little bit about why you can't say, or what's making it difficult to discuss?",
+        "reason": "Agent applies pressure on the customer to disclose sensitive information.",
+        "severity": "major",
+        "category": "PRESSURE_INAPPROPRIATE"
+      },
+      {
+        "agent_text_snippet": "Every month the loan remains open, it adds a negative entry to your credit report.",
+        "reason": "Agent applies payment pressure during a sensitive disclosure (job loss not explicitly mentioned but the customer is hesitant to discuss their situation).",
+        "severity": "major",
+        "category": "PRESSURE_INAPPROPRIATE"
+      },
+      {
+        "agent_text_snippet": "The offer for penalty removal will still be open when we next speak.",
+        "reason": "Agent applies payment pressure during a sensitive disclosure (job loss not explicitly mentioned but the customer is hesitant to discuss their situation).",
+        "severity": "major",
+        "category": "PRESSURE_INAPPROPRIATE"
+      },
+      {
+        "agent_text_snippet": "Would it be alright if I checked in with you in about a week?",
+        "reason": "Agent fails to provide an escalation path (email/contact) when borrower has a legitimate dispute.",
+        "severity": "minor",
+        "category": "NO_ESCALATION"
+      }
+    ],
+    "llm_assessment": "The agent failed to effectively handle the customer's sensitive disclosure and applied payment pressure multiple times, which is a major failure mode. Additionally, the agent failed to provide an escalation path, which is a minor failure mode."
+  }
+]

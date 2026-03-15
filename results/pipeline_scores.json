@@ -1,0 +1,876 @@
+[
+  {
+    "prompt": "system-prompt.md",
+    "prompt_path": "system-prompt.md",
+    "results": [
+      {
+        "call_id": "call_01",
+        "score": 93,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 15,
+            "note": "All 4 phases visited"
+          },
+          "identity_and_amounts": {
+            "score": 15,
+            "note": "Both TOS and closure amount disclosed"
+          },
+          "discovery_quality": {
+            "score": 8,
+            "note": "1 discovery questions, some depth"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 15,
+            "note": "Payment commitment + callback scheduled"
+          }
+        },
+        "base_score": 93,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_02",
+        "score": 53,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "BLANK_CALL disposition but full conversation exists — mismatch"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 0,
+            "note": "BLANK_CALL disposition mismatch — discovery quality unknown"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "Language switched promptly (delay=-32 turns)"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "Good empathy (20 acknowledgments)"
+          },
+          "resolution": {
+            "score": 0,
+            "note": "PENALTY: Disposition mismatch (BLANK_CALL with full conversation); Callback scheduled with date and reason"
+          }
+        },
+        "base_score": 53,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_03",
+        "score": 40,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "Only 2 phases: ['opening', 'discovery', 'dispute']"
+          },
+          "identity_and_amounts": {
+            "score": 0,
+            "note": "No amounts disclosed"
+          },
+          "discovery_quality": {
+            "score": 0,
+            "note": "No meaningful discovery"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "Language switched promptly (delay=-40 turns)"
+          },
+          "repetition": {
+            "score": 10,
+            "note": "Minor repetition (1 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 0,
+            "note": "No resolution or proper ending"
+          }
+        },
+        "base_score": 40,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_04",
+        "score": 85,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 10,
+            "note": "3 phases visited: ['opening', 'discovery', 'negotiation']"
+          },
+          "identity_and_amounts": {
+            "score": 15,
+            "note": "Both TOS and closure amount disclosed"
+          },
+          "discovery_quality": {
+            "score": 15,
+            "note": "3 meaningful discovery questions"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 5,
+            "note": "Moderate repetition (5 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "Good empathy (7 acknowledgments)"
+          },
+          "resolution": {
+            "score": 15,
+            "note": "Payment commitment + callback scheduled"
+          }
+        },
+        "base_score": 85,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_05",
+        "score": 73,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 10,
+            "note": "3 phases visited: ['opening', 'discovery', 'dispute', 'negotiation']"
+          },
+          "identity_and_amounts": {
+            "score": 10,
+            "note": "Both TOS and closure amount disclosed; PENALTY: TOS quoted as payment amount"
+          },
+          "discovery_quality": {
+            "score": 8,
+            "note": "1 discovery questions, some depth"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 15,
+            "note": "Payment commitment + callback scheduled"
+          }
+        },
+        "base_score": 83,
+        "penalty_deductions": 10,
+        "penalty_flags": [
+          "Identity leak: amounts disclosed before identity confirmed (-10)"
+        ],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_06",
+        "score": 78,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 10,
+            "note": "3 phases visited: ['opening', 'discovery', 'dispute', 'negotiation']"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 8,
+            "note": "2 discovery questions, some depth"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 12,
+            "note": "Dispute escalated with contact info"
+          }
+        },
+        "base_score": 78,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_07",
+        "score": 48,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "Only 2 phases: ['opening', 'discovery']"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 0,
+            "note": "No meaningful discovery"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "Language switched promptly (delay=-9 turns)"
+          },
+          "repetition": {
+            "score": 10,
+            "note": "Minor repetition (2 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 0,
+            "note": "No resolution or proper ending"
+          }
+        },
+        "base_score": 48,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_08",
+        "score": 73,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 15,
+            "note": "Acceptable quick exit for disposition type"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 15,
+            "note": "Discovery not applicable for wrong number"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 5,
+            "note": "Moderate repetition (4 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 5,
+            "note": "Call ended but no clear resolution"
+          }
+        },
+        "base_score": 73,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_09",
+        "score": 54,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "Only 2 phases: ['opening', 'callback_opening', 'negotiation']"
+          },
+          "identity_and_amounts": {
+            "score": 15,
+            "note": "Both TOS and closure amount disclosed"
+          },
+          "discovery_quality": {
+            "score": 2,
+            "note": "Inbound callback — discovery phase skipped entirely"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 10,
+            "note": "Minor repetition (2 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": -3,
+            "note": "PENALTY: Connection dropped, no callback scheduled; Call ended but no clear resolution"
+          }
+        },
+        "base_score": 54,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      },
+      {
+        "call_id": "call_10",
+        "score": 55,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "Phase-hopping in very short call (9 turns, 3 phases)"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 0,
+            "note": "No meaningful discovery"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 2,
+            "note": "Call too short, no commitment, agent gave up"
+          }
+        },
+        "base_score": 55,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt.md"
+      }
+    ],
+    "aggregate": {
+      "mean_score": 65.2,
+      "min_score": 40,
+      "max_score": 93,
+      "good_count": 5,
+      "bad_count": 5,
+      "total_calls": 10,
+      "good_rate": 50.0
+    }
+  },
+  {
+    "prompt": "system-prompt-fixed.md",
+    "prompt_path": "system-prompt-fixed.md",
+    "results": [
+      {
+        "call_id": "call_01",
+        "score": 93,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 15,
+            "note": "All 4 phases visited"
+          },
+          "identity_and_amounts": {
+            "score": 15,
+            "note": "Both TOS and closure amount disclosed"
+          },
+          "discovery_quality": {
+            "score": 8,
+            "note": "1 discovery questions, some depth"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 15,
+            "note": "Payment commitment + callback scheduled"
+          }
+        },
+        "base_score": 93,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_02",
+        "score": 53,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "BLANK_CALL disposition but full conversation exists — mismatch"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 0,
+            "note": "BLANK_CALL disposition mismatch — discovery quality unknown"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "Language switched promptly (delay=-32 turns)"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "Good empathy (20 acknowledgments)"
+          },
+          "resolution": {
+            "score": 0,
+            "note": "PENALTY: Disposition mismatch (BLANK_CALL with full conversation); Callback scheduled with date and reason"
+          }
+        },
+        "base_score": 53,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_03",
+        "score": 40,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "Only 2 phases: ['opening', 'discovery', 'dispute']"
+          },
+          "identity_and_amounts": {
+            "score": 0,
+            "note": "No amounts disclosed"
+          },
+          "discovery_quality": {
+            "score": 0,
+            "note": "No meaningful discovery"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "Language switched promptly (delay=-40 turns)"
+          },
+          "repetition": {
+            "score": 10,
+            "note": "Minor repetition (1 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 0,
+            "note": "No resolution or proper ending"
+          }
+        },
+        "base_score": 40,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_04",
+        "score": 85,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 10,
+            "note": "3 phases visited: ['opening', 'discovery', 'negotiation']"
+          },
+          "identity_and_amounts": {
+            "score": 15,
+            "note": "Both TOS and closure amount disclosed"
+          },
+          "discovery_quality": {
+            "score": 15,
+            "note": "3 meaningful discovery questions"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 5,
+            "note": "Moderate repetition (5 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "Good empathy (7 acknowledgments)"
+          },
+          "resolution": {
+            "score": 15,
+            "note": "Payment commitment + callback scheduled"
+          }
+        },
+        "base_score": 85,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_05",
+        "score": 73,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 10,
+            "note": "3 phases visited: ['opening', 'discovery', 'dispute', 'negotiation']"
+          },
+          "identity_and_amounts": {
+            "score": 10,
+            "note": "Both TOS and closure amount disclosed; PENALTY: TOS quoted as payment amount"
+          },
+          "discovery_quality": {
+            "score": 8,
+            "note": "1 discovery questions, some depth"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 15,
+            "note": "Payment commitment + callback scheduled"
+          }
+        },
+        "base_score": 83,
+        "penalty_deductions": 10,
+        "penalty_flags": [
+          "Identity leak: amounts disclosed before identity confirmed (-10)"
+        ],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_06",
+        "score": 78,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 10,
+            "note": "3 phases visited: ['opening', 'discovery', 'dispute', 'negotiation']"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 8,
+            "note": "2 discovery questions, some depth"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 12,
+            "note": "Dispute escalated with contact info"
+          }
+        },
+        "base_score": 78,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_07",
+        "score": 48,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "Only 2 phases: ['opening', 'discovery']"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 0,
+            "note": "No meaningful discovery"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "Language switched promptly (delay=-9 turns)"
+          },
+          "repetition": {
+            "score": 10,
+            "note": "Minor repetition (2 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 0,
+            "note": "No resolution or proper ending"
+          }
+        },
+        "base_score": 48,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_08",
+        "score": 73,
+        "verdict": "good",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 15,
+            "note": "Acceptable quick exit for disposition type"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 15,
+            "note": "Discovery not applicable for wrong number"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 5,
+            "note": "Moderate repetition (4 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 5,
+            "note": "Call ended but no clear resolution"
+          }
+        },
+        "base_score": 73,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_09",
+        "score": 54,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "Only 2 phases: ['opening', 'callback_opening', 'negotiation']"
+          },
+          "identity_and_amounts": {
+            "score": 15,
+            "note": "Both TOS and closure amount disclosed"
+          },
+          "discovery_quality": {
+            "score": 2,
+            "note": "Inbound callback — discovery phase skipped entirely"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 10,
+            "note": "Minor repetition (2 instances)"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": -3,
+            "note": "PENALTY: Connection dropped, no callback scheduled; Call ended but no clear resolution"
+          }
+        },
+        "base_score": 54,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      },
+      {
+        "call_id": "call_10",
+        "score": 55,
+        "verdict": "bad",
+        "dimension_scores": {
+          "phase_progression": {
+            "score": 5,
+            "note": "Phase-hopping in very short call (9 turns, 3 phases)"
+          },
+          "identity_and_amounts": {
+            "score": 8,
+            "note": "Only one amount type disclosed"
+          },
+          "discovery_quality": {
+            "score": 0,
+            "note": "No meaningful discovery"
+          },
+          "language_handling": {
+            "score": 10,
+            "note": "No language switch needed"
+          },
+          "repetition": {
+            "score": 15,
+            "note": "No significant repetition"
+          },
+          "empathy": {
+            "score": 15,
+            "note": "No sensitive signals detected, tone acceptable"
+          },
+          "resolution": {
+            "score": 2,
+            "note": "Call too short, no commitment, agent gave up"
+          }
+        },
+        "base_score": 55,
+        "penalty_deductions": 0,
+        "penalty_flags": [],
+        "worst_messages": [],
+        "llm_assessment": "LLM judge disabled",
+        "simulated": false,
+        "prompt": "system-prompt-fixed.md"
+      }
+    ],
+    "aggregate": {
+      "mean_score": 65.2,
+      "min_score": 40,
+      "max_score": 93,
+      "good_count": 5,
+      "bad_count": 5,
+      "total_calls": 10,
+      "good_rate": 50.0
+    }
+  }
+]
