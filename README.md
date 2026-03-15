@@ -2,46 +2,44 @@
 
 ## Project Summary
 
-This project analyzes the behavior of an AI voice agent used for education loan debt collection calls. The agent communicates with borrowers across multiple conversational phases and attempts to help them resolve outstanding loan payments.
+This project evaluates and improves the behavior of an AI voice agent used for education loan debt collection calls.
+The agent interacts with borrowers through multiple conversation phases and attempts to guide them toward resolving outstanding loan payments.
 
-While reviewing real call transcripts, we observed that the agent performs well in some cases but fails badly in others. The objective of this project is to systematically identify those failures, determine their root causes, and improve the agent's behavior.
+The repository implements a full workflow to:
 
-The project is divided into three stages:
+- Detect problematic conversations
 
-Detective — Build a conversation evaluator that scores agent performance.
+- Identify flaws in the system prompt
 
-Surgeon — Identify flaws in the system prompt and fix them.
+- Fix the prompt and validate improvements
 
-Architect — Build a reusable pipeline to evaluate prompts at scale.
+- Build a reusable prompt evaluation pipeline
 
-The result is a prompt evaluation framework that allows fast iteration and reliable testing of conversational AI behavior.
-
+The result is an automated evaluation framework for conversational AI systems.
 
 ## Problem Statement
 
-Problem Context
-
 AI debt collection agents must carefully balance several goals:
 
-clearly explain loan obligations
+- clearly explain loan obligations
 
-understand borrower circumstances
+- understand borrower circumstances
 
-negotiate repayment options
+- negotiate repayment options
 
-remain professional and empathetic
+- remain professional and empathetic
 
-avoid harassment or repetitive messaging
+- avoid harassment or repetitive messaging
 
 Poor prompt design can cause issues such as:
 
-ignoring borrower concerns
+- ignoring borrower concerns
 
-repeating payment demands
+- repeating payment demands
 
-skipping discovery questions
+- skipping discovery questions
 
-pressuring borrowers during distress
+- pressuring borrowers during distress
 
 Manual monitoring of calls does not scale, so an automated evaluation system is needed.
 
@@ -259,13 +257,13 @@ results/pipeline_scores.json
 
 Analysis of the transcripts revealed several systemic issues:
 
-Agents often fail when borrowers express emotional distress
+- Agents often fail when borrowers express emotional distress
 
-Language switching requires explicit persistence rules
+- Language switching requires explicit persistence rules
 
-Lack of escalation logic leads to repetitive loops
+- Lack of escalation logic leads to repetitive loops
 
-Negotiation strategies must adapt to borrower responses
+- Negotiation strategies must adapt to borrower responses
 
 Prompt improvements addressing these issues lead to more natural and effective conversations.
 
