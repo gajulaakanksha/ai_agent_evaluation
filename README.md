@@ -121,11 +121,11 @@ Create an evaluator that determines how well the AI agent handled each call.
 
 For every transcript the evaluator produces:
 
-a score (0–100)
+- a score (0–100)
 
-problematic agent responses
+- problematic agent responses
 
-a verdict: good / bad
+- a verdict: good / bad
 
 Scores all 10 calls and checks accuracy against verdicts.json:
 
@@ -300,12 +300,12 @@ Prompt improvements addressing these issues lead to more natural and effective c
 
 This project demonstrates a complete workflow for improving conversational AI systems:
 
-detect failures automatically
+- detect failures automatically
 
-diagnose root causes
+- diagnose root causes
 
-improve prompt behavior
+- improve prompt behavior
 
-build infrastructure for continuous evaluation
+- build infrastructure for continuous evaluation
 
 The resulting pipeline enables safe and scalable prompt iteration for AI agents in production environments.
